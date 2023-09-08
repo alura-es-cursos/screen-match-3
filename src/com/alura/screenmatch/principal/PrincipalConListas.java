@@ -17,6 +17,8 @@ public class PrincipalConListas {
         peliculaDeBruno.evalua(10);
         Serie lost = new Serie("Lost", 2000);
 
+        Pelicula p1 = miPelicula;
+
         ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(miPelicula);
         lista.add(otraPelicula);
@@ -24,9 +26,10 @@ public class PrincipalConListas {
         lista.add(lost);
 
         for (Titulo item: lista) {
-            System.out.println(item);
-            Pelicula pelicula = (Pelicula) item;
-            System.out.println(pelicula.getClasificacion());
+            System.out.println(item.getNombre());
+            if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 2){
+                System.out.println(pelicula.getClasificacion());
+            }
         }
     }
 }
